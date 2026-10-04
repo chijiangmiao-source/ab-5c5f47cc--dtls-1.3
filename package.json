@@ -1,0 +1,15 @@
+{
+  "name": "dtls13-relay-audit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deep-space relay DTLS 1.3 record audit service (replay window + KeyUpdate adjudication)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test verify/rules.test.js",
+    "verify": "node verify/run.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

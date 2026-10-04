@@ -1,0 +1,45 @@
+{
+  "audit_id": "smoke-1791114677415-6-trunc",
+  "created_at": "2026-10-04T11:51:17.432Z",
+  "status": "rejected",
+  "initial_epoch": 0,
+  "final_epoch": 0,
+  "records_total": 1,
+  "records_accepted": 0,
+  "violation": {
+    "record_index": 0,
+    "kind": "truncation",
+    "offset": 24,
+    "detail": "ciphertext truncated: length field declares 26 byte(s), only 19 present"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_bytes": 24,
+      "epoch_bits": null,
+      "epoch": null,
+      "seq_bits": null,
+      "sequence_number": null,
+      "auth": "not_reached",
+      "adjudication": null,
+      "window_before": {
+        "max_seq": null,
+        "bitmap": "0x0000000000000000"
+      },
+      "window_after": {
+        "max_seq": null,
+        "bitmap": "0x0000000000000000"
+      },
+      "content_type": null,
+      "content_type_name": null,
+      "app_data_sha256": null,
+      "key_update": false,
+      "epoch_after": null,
+      "violation": {
+        "kind": "truncation",
+        "offset": 24,
+        "detail": "ciphertext truncated: length field declares 26 byte(s), only 19 present"
+      }
+    }
+  ]
+}

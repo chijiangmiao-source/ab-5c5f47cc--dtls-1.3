@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深空中继 · DTLS 1.3 记录审计</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>深空中继 · 加密遥测记录审计</h1>
+    <p class="sub">DTLS 1.3 统一头（无 CID） · TLS_AES_128_GCM_SHA256 · 单方向记录 · 重放窗口裁定</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>审计输入</h2>
+      <form id="audit-form">
+        <div class="grid">
+          <label>审计标识
+            <input id="audit-id" name="audit_id" required pattern="[A-Za-z0-9_\-]{1,64}"
+                   placeholder="relay-pass-2026-10-04" autocomplete="off">
+          </label>
+          <label>初始接收 epoch
+            <input id="initial-epoch" name="initial_epoch" type="number" min="0" max="65535" value="0" required>
+          </label>
+        </div>
+        <label>Traffic Secret（32 字节，64 位十六进制）
+          <input id="traffic-secret" name="traffic_secret" required minlength="64" maxlength="64"
+                 pattern="[0-9a-fA-F]{64}" placeholder="00112233…" autocomplete="off" spellcheck="false">
+        </label>
+        <label>DTLS 1.3 记录（Base64，每行一条，按捕获顺序，至多 48 条）
+          <textarea id="records" rows="10" required spellcheck="false"
+                    placeholder="Base64 编码的记录，每行一条"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit">提交审计</button>
+          <button type="button" id="reopen-btn">重新打开冻结裁决</button>
+          <span id="form-error" class="error"></span>
+        </div>
+      </form>
+    </section>
+
+    <section id="verdict" class="panel hidden">
+      <h2>冻结裁决 <span id="verdict-id" class="mono"></span></h2>
+      <div id="status-banner"></div>
+      <div id="violation-banner" class="hidden"></div>
+      <dl id="summary" class="summary"></dl>
+      <div class="table-wrap">
+        <table id="records-table">
+          <thead>
+            <tr>
+              <th>#</th><th>Epoch</th><th>序号</th><th>认证</th><th>裁定</th>
+              <th>窗口前 (max / bitmap)</th><th>窗口后 (max / bitmap)</th>
+              <th>内容类型</th><th>应用数据摘要 SHA-256</th><th>违规（原始偏移）</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+{
+  "audit_id": "smoke-1791114677415-4-stale",
+  "created_at": "2026-10-04T11:51:17.428Z",
+  "status": "rejected",
+  "initial_epoch": 2,
+  "final_epoch": 3,
+  "records_total": 3,
+  "records_accepted": 2,
+  "violation": {
+    "record_index": 2,
+    "kind": "state",
+    "offset": 0,
+    "detail": "old_epoch: record epoch bits 2, receive epoch is 3"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_bytes": 35,
+      "epoch_bits": 2,
+      "epoch": 2,
+      "seq_bits": 16,
+      "sequence_number": "0",
+      "auth": "ok",
+      "adjudication": "new",
+      "window_before": {
+        "max_seq": null,
+        "bitmap": "0x0000000000000000"
+      },
+      "window_after": {
+        "max_seq": "0",
+        "bitmap": "0x0000000000000001"
+      },
+      "content_type": 22,
+      "content_type_name": "handshake",
+      "app_data_sha256": null,
+      "key_update": true,
+      "epoch_after": 3,
+      "violation": null
+    },
+    {
+      "index": 1,
+      "record_bytes": 31,
+      "epoch_bits": 3,
+      "epoch": 3,
+      "seq_bits": 16,
+      "sequence_number": "0",
+      "auth": "ok",
+      "adjudication": "new",
+      "window_before": {
+        "max_seq": null,
+        "bitmap": "0x0000000000000000"
+      },
+      "window_after": {
+        "max_seq": "0",
+        "bitmap": "0x0000000000000001"
+      },
+      "content_type": 23,
+      "content_type_name": "application_data",
+      "app_data_sha256": "16091175048ac6014be4712b1640c0e3a3272f4fc944e0bee3248f8861b234be",
+      "key_update": false,
+      "epoch_after": null,
+      "violation": null
+    },
+    {
+      "index": 2,
+      "record_bytes": 31,
+      "epoch_bits": 2,
+      "epoch": null,
+      "seq_bits": 16,
+      "sequence_number": null,
+      "auth": "not_reached",
+      "adjudication": null,
+      "window_before": {
+        "max_seq": "0",
+        "bitmap": "0x0000000000000001"
+      },
+      "window_after": {
+        "max_seq": "0",
+        "bitmap": "0x0000000000000001"
+      },
+      "content_type": null,
+      "content_type_name": null,
+      "app_data_sha256": null,
+      "key_update": false,
+      "epoch_after": null,
+      "violation": {
+        "kind": "state",
+        "offset": 0,
+        "detail": "old_epoch: record epoch bits 2, receive epoch is 3"
+      }
+    }
+  ]
+}

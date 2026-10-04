@@ -1,0 +1,84 @@
+{
+  "audit_id": "smoke-1791114611578-0-accepted",
+  "created_at": "2026-10-04T11:50:11.585Z",
+  "status": "accepted",
+  "initial_epoch": 1,
+  "final_epoch": 1,
+  "records_total": 3,
+  "records_accepted": 3,
+  "violation": null,
+  "records": [
+    {
+      "index": 0,
+      "record_bytes": 37,
+      "epoch_bits": 1,
+      "epoch": 1,
+      "seq_bits": 16,
+      "sequence_number": "0",
+      "auth": "ok",
+      "adjudication": "new",
+      "window_before": {
+        "max_seq": null,
+        "bitmap": "0x0000000000000000"
+      },
+      "window_after": {
+        "max_seq": "0",
+        "bitmap": "0x0000000000000001"
+      },
+      "content_type": 23,
+      "content_type_name": "application_data",
+      "app_data_sha256": "5e0c377c3227d5918be97647185368c83d854e771b929632969618618d9548f2",
+      "key_update": false,
+      "epoch_after": null,
+      "violation": null
+    },
+    {
+      "index": 1,
+      "record_bytes": 37,
+      "epoch_bits": 1,
+      "epoch": 1,
+      "seq_bits": 16,
+      "sequence_number": "1",
+      "auth": "ok",
+      "adjudication": "new",
+      "window_before": {
+        "max_seq": "0",
+        "bitmap": "0x0000000000000001"
+      },
+      "window_after": {
+        "max_seq": "1",
+        "bitmap": "0x0000000000000003"
+      },
+      "content_type": 23,
+      "content_type_name": "application_data",
+      "app_data_sha256": "5e0c377c3227d5918be97647185368c83d854e771b929632969618618d9548f2",
+      "key_update": false,
+      "epoch_after": null,
+      "violation": null
+    },
+    {
+      "index": 2,
+      "record_bytes": 37,
+      "epoch_bits": 1,
+      "epoch": 1,
+      "seq_bits": 16,
+      "sequence_number": "2",
+      "auth": "ok",
+      "adjudication": "new",
+      "window_before": {
+        "max_seq": "1",
+        "bitmap": "0x0000000000000003"
+      },
+      "window_after": {
+        "max_seq": "2",
+        "bitmap": "0x0000000000000007"
+      },
+      "content_type": 23,
+      "content_type_name": "application_data",
+      "app_data_sha256": "5e0c377c3227d5918be97647185368c83d854e771b929632969618618d9548f2",
+      "key_update": false,
+      "epoch_after": null,
+      "violation": null
+    }
+  ]
+}
